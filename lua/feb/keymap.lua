@@ -1,16 +1,37 @@
 
+function DeleteLine()
+    local save_cursor = vim.fn.getpos('.')
+    vim.cmd([[normal! "_dd]])
+    vim.fn.setpos('.', save_cursor)
+end
+
+function CommentSelection()
+    local save_cursor = vim.fn.getpos('.')
+    print("test")
+    vim.cmd([[normal! gcc]])
+    vim.fn.setpos('.', save_cursor)
+end
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ee", vim.cmd.Ex) -- explorer
 
-vim.keymap.set("n", "<C-w>", "<cmd>q<CR>") -- close
+vim.keymap.set({"n", "v", "i"}, "<C-w>", "<cmd>q<cr>") -- close
+vim.keymap.set("n", "<M-w>", "<cmd>q<cr>") -- close
+
 vim.keymap.set("n", "<leader>a", "<cmd>wincmd h<CR>") -- left pane
 vim.keymap.set("n", "<leader>d", "<cmd>wincmd l<CR>") -- right pane
 vim.keymap.set("n", "<C-q>", "<cmd>qall!<CR>") -- right pane
 
-vim.keymap.set("n", "<A-q>", "gcc") -- right pane
-vim.keymap.set("n", "<F5>", "gcc")
-
-
+vim.keymap.set({"n", "v", "i"}, "<C-z>", "<cmd>undo<CR>") -- undo
+vim.keymap.set({"n", "v", "i"}, "<C-S-z>", "<cmd>redo<CR>") -- undo
+vim.keymap.set({"n", "v", "i"}, "<C-s>", "<cmd>w<CR>") -- save 
+vim.keymap.set({"n", "v", "i"}, "<C-c>", "<cmd>y<CR>") -- copy 
+vim.keymap.set({"n", "v", "i"}, "<C-v>", "<cmd>p<CR>") -- paste 
+vim.keymap.set({"i", "n"}, "<A-q>", "CommentToggle")
+vim.keymap.set("v", "<A-q>", "'<,'>CommentToggle")
+vim.keymap.set('i', '<S-Delete>', '<cmd>lua DeleteLine()<CR>', { noremap = true, silent = true })
+vim.keymap.set('i', '<S-Delete>', '<cmd>lua DeleteLine()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<S-Delete>', '<cmd>lua DeleteLine()<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Up>", "v<Up>")
 vim.keymap.set("n", "<S-Down>", "v<Down>")
 vim.keymap.set("n", "<S-Left>", "v<Left>")

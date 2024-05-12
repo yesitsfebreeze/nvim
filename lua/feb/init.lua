@@ -1,7 +1,7 @@
 require("feb.set")
 require("feb.keymap")
 require("feb.lazy_setup")
-require("feb.start")
+require("feb.side_by_side")
 
 -- DO.not
 -- DO NOT INCLUDE THIS
@@ -64,6 +64,6 @@ require("feb.start")
 --     end
 -- })
 
--- vim.g.netrw_browse_split = 0
--- vim.g.netrw_banner = 0
--- vim.g.netrw_winsize = 25
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25

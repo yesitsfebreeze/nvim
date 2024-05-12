@@ -3,7 +3,7 @@ vim.opt.guicursor = "n-v-c-i:block"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-
+vim.opt.cursorcolumn = false
 vim.opt.encoding='UTF-8'
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -13,11 +13,11 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.fillchars = {eob = " "}
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
--- vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false

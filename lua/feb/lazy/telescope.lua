@@ -27,14 +27,14 @@ return {
         )
 
         -- search all
-        vim.keymap.set('n', '<C-O>', tele.find_files, {}) 
+        vim.keymap.set('n', '<C-S-o>', tele.find_files, {})
 
         -- search git files or folder
-        vim.keymap.set('n', '<C-o>', git_or_folder_find, {}) 
+        vim.keymap.set('n', '<C-o>', git_or_folder_find, {})
 
         -- search grep
         vim.keymap.set('n', '<C-g>', tele.live_grep, {})
-        
+
         -- search word
         vim.keymap.set('n', '<C-f>', function()
             local word = vim.fn.expand("<cword>")
