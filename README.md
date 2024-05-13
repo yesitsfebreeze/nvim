@@ -1,6 +1,4 @@
-`brew install go`
-`brew install ripgrep` 
-`brew tap homebrew/cask-fonts`
-`brew install font-hack-nerd-font`
+This is mainly for my mac.
 
-https://hackingcpp.com/dev/vim_plugins.html#hfold1a
+copy `install.sh` anywhere and run it.
+Will install and setup everything we need to get coding.
