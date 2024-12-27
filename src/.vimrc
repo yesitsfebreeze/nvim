@@ -1,6 +1,13 @@
 let g:netrw_banner = 0 
+set ssop-=options    " do not store global and local values in a session "
+set ssop-=folds      " do not store folds "
 
-" shift+arrow selection
+" autosave "
+if has("gui_running")
+	autocmd FocusLost * :wa
+endif
+
+" shift+arrow selection "
 nnoremap <S-Up> v<Up>
 nnoremap <S-Down> v<Down>
 nnoremap <S-Left> v<Left>
@@ -14,7 +21,7 @@ inoremap <S-Down> <Esc>v<Down>
 inoremap <S-Left> <Esc>v<Left>
 inoremap <S-Right> <Esc>v<Right>
 
-" delete line
+" delete line "
 nnoremap <S-Del> dd
 vnoremap <S-Del> d
 inoremap <S-Del> <Esc>ddi
@@ -26,5 +33,3 @@ inoremap <D-z> :undo<CR>
 if has('nvim')
 	luafile ~/.config/nvim/.nvim.lua
 endif
-
-echo "ready"
